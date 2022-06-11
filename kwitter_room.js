@@ -1,4 +1,4 @@
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyAh8Ei_3aWJykkFIOYPeJWnNY3uHdQOWBc",
     authDomain: "studily-by-pratham.firebaseapp.com",
     databaseURL: "https://studily-by-pratham-default-rtdb.firebaseio.com",
@@ -19,7 +19,7 @@ function addRoom() {
     purpose : "adding room name"
   });
   localStorage.setItem("room_name",room_name);
-  window.location("kwitter_page.html");
+  window.location="kwitter_page.html";
 }
 function getData() 
 {firebase.database().ref("/").on('value',
@@ -34,5 +34,10 @@ getData();
 function redirectToRoomPage(name) {
   console.log(name);
   localStorage.setItem("room_name",name);
-  window.location("kwitter_page.html");
+  window.location="kwitter_page.html";
+}
+function logout() {
+  localStorage.removeItem("room_name");
+  localStorage.removeItem("user_name");
+  window.location = "index.html";
 }
